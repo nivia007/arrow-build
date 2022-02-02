@@ -35,7 +35,6 @@ install:
     python-gnupg
 script:
 - pushd ..
-- git clone -b test-cache-object-cache-code-change https://github.com/nivia007/arrow
+- git clone -b test-latest-arrow https://github.com/nivia007/arrow
 - pip install -e arrow/dev/archery[crossbow]
 - archery crossbow --queue-path $TRAVIS_BUILD_DIR --queue-remote https://github.com/$TRAVIS_REPO_SLUG submit java-jars --job-prefix nightly
-
